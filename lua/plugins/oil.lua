@@ -23,7 +23,7 @@ local function oil_copy()
 	end
 
 	if #uris > 0 then
-		vim.fn.system({ "xclip", "-selection", "clipboard", "-t", "text/uri-list" }, table.concat(uris, "\n"))
+		vim.fn.system({ "wl-copy", "--type", "text/uri-list" }, table.concat(uris, "\n")) -- for wayland way-to-go!
 		print("Copied " .. #uris .. " files")
 	end
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)

@@ -1,4 +1,5 @@
-local languages = { "lua", "python", "bash", "vim", "javascript", "typescript", "json", "yaml", "markdown", "ruby" }
+local languages = { "lua", "python", "bash", "vim", "javascript",
+	"typescript", "json", "yaml", "markdown", "ruby", "nix" }
 
 require('nvim-treesitter').install(languages)
 vim.api.nvim_create_autocmd('FileType', {
@@ -18,4 +19,4 @@ local function ts_select(method)
 end
 
 vim.keymap.set({ 'n', 'x', 'o' }, '<M-o>', ts_select('select_parent'), { desc = 'TS: Select parent' })
-vim.keymap.set({ 'n', 'x', 'o' }, '<M-i>', ts_select('select_child'),  { desc = 'TS: Select child' })
+vim.keymap.set({ 'n', 'x', 'o' }, '<M-i>', ts_select('select_child'), { desc = 'TS: Select child' })
